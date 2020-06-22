@@ -29,11 +29,10 @@ class Song
   
   def self.genre_count
     genre_hash ={}
-    number = 1
     @@genres.each do |genre|
       if genre_hash.has_key?(genre)
-          genre_hash[genre] = number + 1
-      else genre_hash[genre] = number
+          genre_hash[genre] += 1
+      else genre_hash[genre] = 1
       end
     end
     genre_hash
@@ -41,11 +40,10 @@ class Song
   
   def self.artist_count
     artist_hash = {}
-    number = 1
     @@artists.each do |artist|
       if artist_hash.has_key?(artist)
-        artist_hash[artist] = number + 1 
-      else artist_hash[artist] = number
+        artist_hash[artist] += 1 
+      else artist_hash[artist] = 1
       end
     end
     artist_hash
